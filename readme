@@ -1,0 +1,12 @@
+Ruels And Policies:
+- We cant create same name database in one server
+- There should no any space in database or table 
+- There should be always id colmn in every table
+- Always use small letters while working on database.
+
+Tables:
+    users:
+       1 - id
+       2 - name
+       3 - email
+       4 - password
