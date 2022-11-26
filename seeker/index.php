@@ -6,7 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<?php 
+    session_start();
+    if(empty($_SESSION['name']) && empty($_SESSION['status']) && $_SESSION['status'] != 1){
+        header('location:../login.php');
+    }
+?>
 <body>
-    <h1>Job Seeker</h1>
+    <h1>Welcome <?php echo $_SESSION['status']; ?></h1>
 </body>
 </html>

@@ -5,14 +5,14 @@
 				<div class="card">
 					<div class="card-header"><i class="fa fa-user"></i>  Login Here </div>
 					<div class="card-body">
-						<form action="" method="post" >
+						<form action="actions/login.php" method="post" >
 							<div class="form-group">
 								<label> <i class="fa fa-envelope"></i> Email </label>
-								<input type="text" class="form-control" placeholder="Name" name="name" />
+								<input type="text" class="form-control" placeholder="Name" name="email" />
 							</div>
 							<div class="form-group">
 								<label> <i class="fa fa-key"></i> Password </label>
-								<input type="Password" class="form-control" placeholder="Password" name="name" />
+								<input type="Password" class="form-control" placeholder="Password" name="password" />
 							</div>
 							<div class="form-group">
 								<button class="btn btn-warning"> <i class="fa fa-arrow-right"></i> Login</button>

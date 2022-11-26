@@ -32,6 +32,11 @@
 								<input type="Password" class="form-control" placeholder="Password" name="cpassword" />
 							</div>
 							<div class="form-group">
+								<label> Are You Job? </label>
+								Seeker <input type="radio" name="status" value="1" />
+								Provider <input type="radio" name="status" value="2" />
+							</div>
+							<div class="form-group">
 								<button type="submit" class="btn btn-warning"> <i class="fa fa-arrow-right"></i> Register </button>
 							</div>
 						</form>
