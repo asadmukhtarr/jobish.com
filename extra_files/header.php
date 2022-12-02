@@ -35,6 +35,24 @@
 						<li class="nav-item">
 							<a href="contact.php" class="nav-link"> <i class="fa fa-envelope"></i> Contact</a>
 						</li>
+						<?php
+							session_start();
+							if(!empty($_SESSION['name'])){
+						?>
+						<li class="nav-item">
+							<div class="btn-group" style="margin-right:1px; margin-top:1px;">
+								<button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									<i class="fa fa-user-circle"></i> <?php echo ucfirst($_SESSION['name']); ?>
+								</button>
+								<div class="dropdown-menu">
+									<a class="dropdown-item" href="register.php"> <i class="fa fa-list"></i>  Dashboard </a>
+									<a class="dropdown-item" href="actions/logout.php"> <i class="fa fa-sign-out"></i>  Logout </a>
+								</div>
+							</div>
+						</li>
+						<?php		
+							}  else {
+						?>
 						<li class="nav-item">
 					        <div class="btn-group" style="margin-right:1px; margin-top:1px;">
 							  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -46,6 +64,9 @@
 							  </div>
 							</div>
 					    </li>
+						<?php 
+							}
+						?>
 					   	<li class="nav-item dropdown" style="margin-top:1px;">
 					       <a class="btn btn-warning" href="create_job.php" role="button"> <i class="fa fa-pencil"></i> Post A Job</a>
 					    </li>

@@ -1,18 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
 <?php 
-    session_start();
+    include('../extra_files/header.php'); 
     if(empty($_SESSION['name']) && empty($_SESSION['status']) && $_SESSION['status'] != 1){
         header('location:../login.php');
     }
 ?>
-<body>
-    <h1>Welcome <?php echo $_SESSION['status']; ?></h1>
-</body>
-</html>
+    <div class="container mt-2">
+        <div class="card-header">
+            Welcome to job  provider section, <b> <?php echo $_SESSION['name']; ?> </b>
+        </div>
+    </div>
+<?php include('../extra_files/footer.php'); ?>

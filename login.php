@@ -4,6 +4,15 @@
 			<div class="col-lg-4">
 				<div class="card">
 					<div class="card-header"><i class="fa fa-user"></i>  Login Here </div>
+					<?php 
+						if(!empty($_GET['error'])){
+					?>
+						<div class="alert alert-danger">
+							<b>Alert!</b> <?php echo $_GET['error']; ?>
+						</div>
+					<?php
+						}
+					?>
 					<div class="card-body">
 						<form action="actions/login.php" method="post" >
 							<div class="form-group">

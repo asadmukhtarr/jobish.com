@@ -25,6 +25,7 @@
             header('Location:../provider/index.php');
         }
     } else {
-        echo 'cant found use';
+        $error = "Email or password is wrong!";
+        echo header('Location:../login.php?error='.$error);
     }
 ?>
