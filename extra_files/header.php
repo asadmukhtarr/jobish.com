@@ -67,9 +67,28 @@
 						<?php 
 							}
 						?>
-					   	<li class="nav-item dropdown" style="margin-top:1px;">
-					       <a class="btn btn-warning" href="create_job.php" role="button"> <i class="fa fa-pencil"></i> Post A Job</a>
-					    </li>
+						<?php
+							if(!empty($_SESSION['name'])){
+						?>
+						<li class="nav-item">
+							<div class="btn-group" style="margin-right:1px; margin-top:1px;">
+								<button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									<i class="fa fa-user-circle"></i> Create New Job
+								</button>
+								<div class="dropdown-menu">
+									<a class="dropdown-item" href="jobs.php"> <i class="fa fa-list"></i>  Your Jobs </a>
+								</div>
+							</div>
+						</li>
+						<?php } else {
+						?>
+						<li class="nav-item">
+							<a href="create_job.php" class="nav-link">
+								<i class="fa fa-plus-circle"></i> Create Job
+							</a>
+						</li>
+						<?php
+						} ?>
 					</ul>
 				</div>
 			</div>

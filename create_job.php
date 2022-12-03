@@ -1,22 +1,28 @@
-<?php include_once('extra_files/header.php'); ?>
-	<div class="container mt-5">
+<?php 
+	include_once('extra_files/header.php'); 
+	if(empty($_SESSION['name'])){
+		header('location:login.php');
+	}
+?>
+
+<div class="container mt-5">
 		<div class="row">
 			<div class="col-lg-10">
 				<div class="card">
 					<div class="card-header"><i class="fa fa-user"></i> Post New Job </div>
 					<div class="card-body">
-						<form action="" method="post" >
+						<form action="actions/create_job.php" method="POST" >
 							<div class="form-group">
 								<label> <i class="fa fa-pencil"></i> Title </label>
-								<input type="text" class="form-control" placeholder="Name" name="name" />
+								<input type="text" class="form-control" placeholder="Name" name="title" />
 							</div>
 							<div class="form-group">
 								<label> <i class="fa fa-pencil"></i> Description </label>
-								<textarea class="form-control" rows="4"></textarea>
+								<textarea name="desc" class="form-control" rows="4"></textarea>
 							</div>
 							<div class="form-group">
-								<label> <i class="fa fa-envelope"></i> Email </label>
-								<input type="text" class="form-control" placeholder="Name" name="name" />
+								<label> <i class="fa fa-envelope"></i> Name </label>
+								<input type="text" class="form-control" value="<?php echo $_SESSION['name']; ?>" placeholder="Name" name="name" />
 							</div>
 							<div class="form-group">
 								<div class="row">
@@ -31,7 +37,7 @@
 									</div>
 									<div class="col-lg-6">
 										<label> <i class="fa fa-list"></i> Sub Category</label>
-										<select class="form-control" name="category">
+										<select class="form-control" name="subcategory">
 											<option>Select Sub Category</option>
 											<option>Category 1</option>
 											<option>Category 2</option>
@@ -57,7 +63,7 @@
 									</div>
 									<div class="col-lg-2">
 										<label> <i class="fa fa-list"></i> Currency</label>
-										<select class="form-control" name="salary_type">
+										<select class="form-control" name="currency">
 											<option>PKR</option>
 											<option>USD</option>
 											<option>Euro</option>
@@ -69,7 +75,7 @@
 								<div class="row">
 									<div class="col-lg-6">
 										<label> <i class="fa fa-envelope"></i> Email </label>
-										<input type="number" class="form-control" name="email">
+										<input type="text" class="form-control" value="<?php echo $_SESSION['email']; ?>" name="email">
 									</div>
 									<div class="col-lg-6">
 										<label> <i class="fa fa-whatsapp"></i> Whats App </label>
@@ -82,7 +88,7 @@
 								<input type="text" class="form-control" name="location">
 							</div>
 							<div class="form-group">
-								<button class="btn btn-danger float-right"> <i class="fa fa-arrow-right"></i> Post Job</button>
+								<button class="btn btn-danger float-right" type="submit" name="submit"> <i class="fa fa-arrow-right"></i> Post Job</button>
 							</div>
 						</form>
 					</div>
