@@ -14,9 +14,9 @@
 		$email = $_POST['email'];
 		$phone = $_POST['phone'];
 		$location = $_POST['location'];
-		$user_id = $_SESSION['id'];
+		$user_id = $_SESSION['id']; // user is getting from session ..
 		$insert_rec = "INSERT INTO `job_list`(`jo_title`, `jo_des`, `jo_name`, `jo_cat`, `jo_sub_cat`, `jo_salary_ty`, `jo_salary`, `jo_currency`, `jo_email`, `jo_whatsappno`, `jo_location`,`user_id`) 
-		VALUES ('$title','$desc ','$name','$category','$subcategory','$salary_type','$salary','$currency','$email','$phone','$location','$user_id')";
+		VALUES ('$title','$desc ','$name','$category','$subcategory','$salary_type','$salary','$currency','$email','$phone','$location','$user_id')"; // inserting data into databse with userid ..
 
 		if(mysqli_query($cn,$insert_rec)){
 			// create job ..
